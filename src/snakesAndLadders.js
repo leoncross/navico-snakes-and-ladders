@@ -13,7 +13,8 @@ Game.prototype.generateBoard = function () {
   }
 }
 
-Game.prototype.move = function (count) {
+Game.prototype.move = function () {
+  var count = this.diceRoll()
   for (var i = 0; i < this.board.length; i++) {
     if (this.board[i]['taken'] === 1) return this.moveProcess(i, count)
   }

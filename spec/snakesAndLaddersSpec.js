@@ -20,9 +20,10 @@ describe('Game', function () {
   })
   describe('#move', function () {
     it('moves the player 1 place', function () {
+      spyOn(game, 'diceRoll').and.returnValue(1)
       game.initialize()
       expect(game.board[0]).toEqual({square: 1, taken: 1})
-      game.move(1)
+      game.move()
       expect(game.board[1]).toEqual({square: 2, taken: 1})
     })
   })

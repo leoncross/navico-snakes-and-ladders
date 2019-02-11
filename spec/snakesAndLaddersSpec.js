@@ -12,17 +12,18 @@ describe('Game', function () {
       expect(game.board.length).toEqual(100)
     })
   })
-
-  describe('#move', function () {
-    it('moves 1', function () {
-      expect(game.move()).toEqual(1)
-    })
-  })
-
   describe('#initialize', function () {
     it('starts the game', function () {
       game.initialize()
       expect(game.board[0]).toEqual({square: 1, taken: 1})
+    })
+  })
+  describe('#move', function () {
+    it('moves the player 1 place', function () {
+      game.initialize()
+      expect(game.board[0]).toEqual({square: 1, taken: 1})
+      game.move(1)
+      expect(game.board[1]).toEqual({square: 2, taken: 1})
     })
   })
 })

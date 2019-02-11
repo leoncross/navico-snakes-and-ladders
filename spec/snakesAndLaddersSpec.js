@@ -18,4 +18,11 @@ describe('Game', function () {
       expect(game.move()).toEqual(1)
     })
   })
+
+  describe('#initialize', function () {
+    it('starts the game', function () {
+      game.initialize()
+      expect(game.board[0]).toEqual({square: 1, taken: 1})
+    })
+  })
 })

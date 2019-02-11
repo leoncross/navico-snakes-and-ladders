@@ -26,4 +26,10 @@ describe('Game', function () {
       expect(game.board[1]).toEqual({square: 2, taken: 1})
     })
   })
+  describe('#diceRoll', function () {
+    it('returns a random number between 1 and 6', function () {
+      spyOn(game, 'diceRoll').and.returnValue(1)
+      expect(game.diceRoll()).toEqual(1)
+    })
+  })
 })

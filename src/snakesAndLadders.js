@@ -24,4 +24,8 @@ Game.prototype.moveProcess = function (index, count) {
   this.board[index + count] = { square: index + count + 1, taken: 1 }
 }
 
+Game.prototype.diceRoll = function () {
+  return Math.floor((Math.random() * 6) + 1)
+}
+
 module.exports = Game
